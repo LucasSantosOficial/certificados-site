@@ -1,0 +1,283 @@
+<!-- Formulário de Corrida -->
+<div class="max-w-2xl mx-auto">
+  <div class="card shadow-xl">
+    <div class="card-header text-center bg-gradient-header text-white rounded-t-lg">
+      <h1 class="card-title text-3xl flex items-center justify-center gap-2">
+        <i class="fas fa-trophy w-8 h-8"></i>
+        Gerador de Certificados de Corrida
+      </h1>
+      <p class="card-description text-blue-100">
+        Crie certificados personalizados para suas conquistas na corrida
+      </p>
+    </div>
+
+<button onclick="voltar()">Voltar</button>
+<script>
+function voltar() {
+    if (document.referrer) {
+        // Volta para a página anterior do histórico
+        window.history.back();
+    } else {
+        // Se não houver página anterior, vai para o menu
+        window.location.href = "menu.html";
+    }
+}
+</script>
+
+    <div class="card-content p-6 space-y-6">
+      <!-- Dados do Corredor -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-user w-5 h-5"></i>
+          Dados do Corredor
+        </h3>
+
+        <div>
+          <label for="nomeCorretor" class="label">Nome do Corredor *</label>
+          <input id="nomeCorretor" type="text" class="input mt-1" placeholder="Digite o nome completo"/>
+        </div>
+
+        <div>
+          <label for="foto" class="label">Foto do Corredor</label>
+          <input id="foto" type="file" accept="image/*" class="input mt-1"/>
+        </div>
+      </div>
+
+      <!-- Dados da Corrida -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-medal w-5 h-5"></i>
+          Dados da Corrida
+        </h3>
+
+        <div>
+          <label for="nomeCorrida" class="label">Nome da Corrida *</label>
+          <input id="nomeCorrida" type="text" class="input mt-1" placeholder="Ex: 11° Maratona de São Paulo"/>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="localCorrida" class="label">Local da Corrida *</label>
+            <input id="localCorrida" type="text" class="input mt-1" placeholder="Ex: São Paulo, SP"/>
+          </div>
+
+          <div>
+            <label for="dataCorrida" class="label">Data da Corrida</label>
+            <input id="dataCorrida" type="date" class="input mt-1"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="distancia" class="label">Distância Percorrida</label>
+            <input id="distancia" type="number" step="0.1" class="input mt-1" placeholder="Ex: 15"/>
+          </div>
+
+          <div>
+            <label for="unidadeDistancia" class="label">Unidade</label>
+            <select id="unidadeDistancia" class="select mt-1">
+              <option value="km">Quilômetros (km)</option>
+              <option value="milhas">Milhas</option>
+              <option value="metros">Metros</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horários -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-clock w-5 h-5"></i>
+          Horários
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="horaInicio" class="label">Hora de Início</label>
+            <input id="horaInicio" type="time" class="input mt-1"/>
+          </div>
+
+          <div>
+            <label for="horaTermino" class="label">Hora de Término</label>
+            <input id="horaTermino" type="time" class="input mt-1"/>
+          </div>
+        </div>
+
+        <div id="tempo-calculado" class="bg-green-50 border border-green-200 rounded-lg p-3" style="display:none;">
+          <p class="text-green-800 font-medium">
+            ⏱️ Tempo calculado: <span id="tempo-valor" class="text-xl"></span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Personalização -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-quote-left w-5 h-5"></i>
+          Personalização
+        </h3>
+
+        <div>
+          <label for="mensagemMotivacional" class="label">Mensagem Motivacional</label>
+          <select id="mensagemMotivacional" class="select mt-1">
+            <option value="">Escolha uma mensagem inspiradora</option>
+            <option value="O corpo vai mais longe do que a mente acredita.">O corpo vai mais longe do que a mente acredita.</option>
+            <option value="Cada passo é uma vitória sobre você mesmo.">Cada passo é uma vitória sobre você mesmo.</option>
+            <option value="A dor é temporária, a conquista é eterna.">A dor é temporária, a conquista é eterna.</option>
+            <option value="Não pare quando estiver cansado, pare quando terminar.">Não pare quando estiver cansado, pare quando terminar.</option>
+            <option value="Seus únicos limites são aqueles que você aceita.">Seus únicos limites são aqueles que você aceita.</option>
+            <option value="A corrida não é sobre velocidade, é sobre resistência.">A corrida não é sobre velocidade, é sobre resistência.</option>
+            <option value="Grandes conquistas começam com pequenos passos.">Grandes conquistas começam com pequenos passos.</option>
+            <option value="O impossível é apenas uma opinião.">O impossível é apenas uma opinião.</option>
+            <option value="Você é mais forte do que pensa e mais capaz do que imagina.">Você é mais forte do que pensa e mais capaz do que imagina.</option>
+            <option value="A linha de chegada é apenas o começo de uma nova jornada.">A linha de chegada é apenas o começo de uma nova jornada.</option>
+            <option value="Correr é a metáfora da vida: às vezes devagar, às vezes rápido, mas sempre em frente.">Correr é a metáfora da vida: às vezes devagar, às vezes rápido, mas sempre em frente.</option>
+            <option value="Cada quilômetro percorrido é uma prova do seu poder interior.">Cada quilômetro percorrido é uma prova do seu poder interior.</option>
+            <option value="A verdadeira competição é com quem você era ontem.">A verdadeira competição é com quem você era ontem.</option>
+            <option value="Desistir não é uma opção quando você tem um sonho.">Desistir não é uma opção quando você tem um sonho.</option>
+            <option value="O suor de hoje é o orgulho de amanhã.">O suor de hoje é o orgulho de amanhã.</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="notaPersonalizada" class="label">Nota Personalizada</label>
+          <textarea id="notaPersonalizada" class="textarea mt-1" rows="3" placeholder="Ex: Primeira maratona completa, tempo pessoal batido, etc."></textarea>
+        </div>
+      </div>
+
+      <!-- Botões de ação -->
+      <div class="flex gap-4 justify-center">
+        <button id="voltar-menu-corrida" class="btn btn-outline">
+          <i class="fas fa-arrow-left mr-2"></i>
+          Voltar ao Menu
+        </button>
+        <button id="gerar-previa" class="btn btn-primary">
+          <i class="fas fa-eye mr-2"></i>
+          Gerar Prévia do Certificado
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prévia do certificado de corrida -->
+<div id="preview-container" class="min-h-screen bg-gradient-amber p-4" style="display:none;">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-6 flex gap-4 justify-center">
+      <button id="voltar-edicao" class="btn btn-outline flex items-center gap-2">
+        <i class="fas fa-trophy w-4 h-4"></i>
+        Editar Dados
+      </button>
+      <button id="deletar-previa" class="btn btn-destructive flex items-center gap-2">
+        <i class="fas fa-medal w-4 h-4"></i>
+        Deletar e Recomeçar
+      </button>
+      <button id="gerar-pdf" class="btn btn-primary flex items-center gap-2">
+        <i class="fas fa-download w-4 h-4"></i>
+        Gerar PDF Final
+      </button>
+    </div>
+
+    <!-- Quadro do Corredor -->
+    <div id="certificate" class="certificate-container">
+      <!-- Decorações de canto -->
+      <div class="corner-decoration top-left"></div>
+      <div class="corner-decoration top-right"></div>
+      <div class="corner-decoration bottom-left"></div>
+      <div class="corner-decoration bottom-right"></div>
+
+      <!-- Cabeçalho -->
+      <div class="certificate-header">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <i class="fas fa-trophy certificate-trophy-icon"></i>
+          <h1 class="certificate-title">CONQUISTA PESSOAL</h1>
+          <i class="fas fa-trophy certificate-trophy-icon"></i>
+        </div>
+        <div class="certificate-divider"></div>
+        <p id="cert-local" class="certificate-location"></p>
+        <p id="cert-data" class="certificate-date"></p>
+      </div>
+
+      <div class="certificate-content">
+        <!-- Foto do corredor -->
+        <div id="foto-container" class="photo-container" style="display:none;">
+          <div class="photo-wrapper">
+            <img id="cert-foto" src="" alt="Corredor" class="runner-photo"/>
+            <div class="photo-medal">
+              <i class="fas fa-medal"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informações da corrida -->
+        <div class="race-info">
+          <h2 id="cert-nome-corrida" class="race-title"></h2>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-user info-icon blue"></i>
+                <span class="info-label">Atleta</span>
+              </div>
+              <p id="cert-nome-corredor" class="info-value"></p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-map-marker-alt info-icon red"></i>
+                <span class="info-label">Distância</span>
+              </div>
+              <p id="cert-distancia" class="info-value"></p>
+            </div>
+
+            <div id="tempo-card" class="info-card" style="display:none;">
+              <div class="info-header">
+                <i class="fas fa-clock info-icon green"></i>
+                <span class="info-label">Tempo</span>
+              </div>
+              <p id="cert-tempo" class="info-value"></p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-calendar info-icon purple"></i>
+                <span class="info-label">Horário</span>
+              </div>
+              <p id="cert-horario" class="info-value"></p>
+            </div>
+          </div>
+
+          <div id="nota-personalizada-container" class="custom-note" style="display:none;">
+            <div class="custom-note-header">
+              <i class="fas fa-trophy custom-note-icon"></i>
+              <span class="custom-note-label">Destaque</span>
+            </div>
+            <p id="cert-nota-personalizada" class="custom-note-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensagem motivacional -->
+      <div id="mensagem-container" class="motivational-message" style="display:none;">
+        <div class="message-wrapper">
+          <i class="fas fa-quote-left quote-icon"></i>
+          <p id="cert-mensagem" class="message-text"></p>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="certificate-footer">
+        <div class="footer-content">
+          <div class="footer-line left"></div>
+          <div class="footer-text">
+            <i class="fas fa-medal footer-icon"></i>
+            <span>CONQUISTA REGISTRADA</span>
+            <i class="fas fa-medal footer-icon"></i>
+          </div>
+          <div class="footer-line right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

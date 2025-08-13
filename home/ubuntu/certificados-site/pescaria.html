@@ -1,0 +1,345 @@
+<!-- Formulário de Pescaria -->
+<div class="max-w-2xl mx-auto">
+  <div class="card shadow-xl">
+    <div class="card-header text-center bg-gradient-header text-white rounded-t-lg">
+      <h1 class="card-title text-3xl flex items-center justify-center gap-2">
+        <i class="fas fa-fish w-8 h-8"></i>
+        Gerador de Certificados de Pescaria
+      </h1>
+      <p class="card-description text-blue-100">
+        Crie certificados personalizados para suas conquistas na pescaria
+      </p>
+    </div>
+
+    <div class="card-content p-6 space-y-6">
+      <!-- Dados do Pescador -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-user w-5 h-5"></i>
+          Dados do Pescador
+        </h3>
+
+        <div>
+          <label for="nomePescador" class="label">Nome do Pescador *</label>
+          <input id="nomePescador" type="text" class="input mt-1" placeholder="Digite o nome completo"/>
+        </div>
+
+        <div>
+          <label for="fotoPescador" class="label">Foto do Pescador</label>
+          <input id="fotoPescador" type="file" accept="image/*" class="input mt-1"/>
+        </div>
+      </div>
+
+      <!-- Dados da Pescaria -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-medal w-5 h-5"></i>
+          Dados da Pescaria
+        </h3>
+
+        <div>
+          <label for="nomeTorneio" class="label">Nome do Torneio/Evento *</label>
+          <input id="nomeTorneio" type="text" class="input mt-1" placeholder="Ex: 15° Torneio de Pesca do Rio Grande"/>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="localPescaria" class="label">Local da Pescaria *</label>
+            <input id="localPescaria" type="text" class="input mt-1" placeholder="Ex: Rio Grande, RS"/>
+          </div>
+
+          <div>
+            <label for="dataPescaria" class="label">Data da Pescaria</label>
+            <input id="dataPescaria" type="date" class="input mt-1"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="especiePeixe" class="label">Espécie do Peixe *</label>
+            <select id="especiePeixe" class="select mt-1">
+              <option value="">Selecione a espécie</option>
+              <option value="Tucunaré">Tucunaré</option>
+              <option value="Dourado">Dourado</option>
+              <option value="Pintado">Pintado</option>
+              <option value="Pacu">Pacu</option>
+              <option value="Traíra">Traíra</option>
+              <option value="Corvina">Corvina</option>
+              <option value="Robalo">Robalo</option>
+              <option value="Tambaqui">Tambaqui</option>
+              <option value="Pirarucu">Pirarucu</option>
+              <option value="Surubim">Surubim</option>
+              <option value="Bagre">Bagre</option>
+              <option value="Carpa">Carpa</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="especieOutra" class="label">Outra Espécie</label>
+            <input id="especieOutra" type="text" class="input mt-1" placeholder="Digite a espécie" style="display:none;"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="pesoPeixe" class="label">Peso do Peixe</label>
+            <input id="pesoPeixe" type="number" step="0.1" class="input mt-1" placeholder="Ex: 5.2"/>
+          </div>
+
+          <div>
+            <label for="unidadePeso" class="label">Unidade</label>
+            <select id="unidadePeso" class="select mt-1">
+              <option value="kg">Quilogramas (kg)</option>
+              <option value="g">Gramas (g)</option>
+              <option value="lb">Libras (lb)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="comprimentoPeixe" class="label">Comprimento do Peixe</label>
+            <input id="comprimentoPeixe" type="number" step="0.1" class="input mt-1" placeholder="Ex: 45"/>
+          </div>
+
+          <div>
+            <label for="unidadeComprimento" class="label">Unidade</label>
+            <select id="unidadeComprimento" class="select mt-1">
+              <option value="cm">Centímetros (cm)</option>
+              <option value="m">Metros (m)</option>
+              <option value="in">Polegadas (in)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detalhes da Pescaria -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-clock w-5 h-5"></i>
+          Detalhes da Pescaria
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="horaCaptura" class="label">Hora da Captura</label>
+            <input id="horaCaptura" type="time" class="input mt-1"/>
+          </div>
+
+          <div>
+            <label for="tecnicaPesca" class="label">Técnica de Pesca</label>
+            <select id="tecnicaPesca" class="select mt-1">
+              <option value="">Selecione a técnica</option>
+              <option value="Pesca com Isca Viva">Pesca com Isca Viva</option>
+              <option value="Pesca com Isca Artificial">Pesca com Isca Artificial</option>
+              <option value="Fly Fishing">Fly Fishing</option>
+              <option value="Pesca de Fundo">Pesca de Fundo</option>
+              <option value="Trolling">Trolling</option>
+              <option value="Jigging">Jigging</option>
+              <option value="Spinning">Spinning</option>
+              <option value="Baitcasting">Baitcasting</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="equipamento" class="label">Equipamento Utilizado</label>
+            <input id="equipamento" type="text" class="input mt-1" placeholder="Ex: Vara 2,10m + Molinete 4000"/>
+          </div>
+
+          <div>
+            <label for="isca" class="label">Isca Utilizada</label>
+            <input id="isca" type="text" class="input mt-1" placeholder="Ex: Lambari vivo, Jig Head"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personalização -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-semibold flex items-center gap-2 text-gray-700">
+          <i class="fas fa-quote-left w-5 h-5"></i>
+          Personalização
+        </h3>
+
+        <div>
+          <label for="mensagemPescaria" class="label">Mensagem Motivacional</label>
+          <select id="mensagemPescaria" class="select mt-1">
+            <option value="">Escolha uma mensagem inspiradora</option>
+            <option value="A paciência é a virtude do pescador.">A paciência é a virtude do pescador.</option>
+            <option value="Cada pescaria é uma nova aventura.">Cada pescaria é uma nova aventura.</option>
+            <option value="O rio ensina mais que qualquer livro.">O rio ensina mais que qualquer livro.</option>
+            <option value="Pescar é mais que capturar, é conectar-se com a natureza.">Pescar é mais que capturar, é conectar-se com a natureza.</option>
+            <option value="A melhor pescaria é aquela feita com amigos.">A melhor pescaria é aquela feita com amigos.</option>
+            <option value="Cada peixe tem sua história, cada pescador sua lenda.">Cada peixe tem sua história, cada pescador sua lenda.</option>
+            <option value="Na pescaria, o tempo não existe, só a paz.">Na pescaria, o tempo não existe, só a paz.</option>
+            <option value="O verdadeiro pescador respeita a natureza.">O verdadeiro pescador respeita a natureza.</option>
+            <option value="Pescar é uma arte que se aprende com o coração.">Pescar é uma arte que se aprende com o coração.</option>
+            <option value="Cada anzol lançado é uma esperança renovada.">Cada anzol lançado é uma esperança renovada.</option>
+            <option value="A pescaria ensina paciência, persistência e humildade.">A pescaria ensina paciência, persistência e humildade.</option>
+            <option value="No silêncio das águas, encontramos nossa paz interior.">No silêncio das águas, encontramos nossa paz interior.</option>
+            <option value="Pescar é meditar em movimento.">Pescar é meditar em movimento.</option>
+            <option value="A natureza sempre recompensa quem a respeita.">A natureza sempre recompensa quem a respeita.</option>
+            <option value="Cada pescaria é uma lição de vida.">Cada pescaria é uma lição de vida.</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="notaPescaria" class="label">Nota Personalizada</label>
+          <textarea id="notaPescaria" class="textarea mt-1" rows="3" placeholder="Ex: Maior peixe da temporada, primeiro peixe com nova técnica, etc."></textarea>
+        </div>
+      </div>
+
+      <!-- Botões de ação -->
+      <div class="flex gap-4 justify-center">
+        <button id="voltar-menu" class="btn btn-outline">
+          <i class="fas fa-arrow-left mr-2"></i>
+          Voltar ao Menu
+        </button>
+        <button id="gerar-previa-pescaria" class="btn btn-primary">
+          <i class="fas fa-eye mr-2"></i>
+          Gerar Prévia do Certificado
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prévia do certificado de pescaria -->
+<div id="preview-pescaria" class="min-h-screen bg-gradient-amber p-4" style="display:none;">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-6 flex gap-4 justify-center">
+      <button id="voltar-edicao-pescaria" class="btn btn-outline flex items-center gap-2">
+        <i class="fas fa-fish w-4 h-4"></i>
+        Editar Dados
+      </button>
+      <button id="deletar-previa-pescaria" class="btn btn-destructive flex items-center gap-2">
+        <i class="fas fa-medal w-4 h-4"></i>
+        Deletar e Recomeçar
+      </button>
+      <button id="gerar-pdf-pescaria" class="btn btn-primary flex items-center gap-2">
+        <i class="fas fa-download w-4 h-4"></i>
+        Gerar PDF Final
+      </button>
+    </div>
+
+    <!-- Certificado de Pescaria -->
+    <div id="certificate-pescaria" class="certificate-container">
+      <!-- Decorações de canto -->
+      <div class="corner-decoration top-left"></div>
+      <div class="corner-decoration top-right"></div>
+      <div class="corner-decoration bottom-left"></div>
+      <div class="corner-decoration bottom-right"></div>
+
+      <!-- Cabeçalho -->
+      <div class="certificate-header">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <i class="fas fa-fish certificate-trophy-icon"></i>
+          <h1 class="certificate-title">CONQUISTA PESQUEIRA</h1>
+          <i class="fas fa-fish certificate-trophy-icon"></i>
+        </div>
+        <div class="certificate-divider"></div>
+        <p id="cert-local-pescaria" class="certificate-location"></p>
+        <p id="cert-data-pescaria" class="certificate-date"></p>
+      </div>
+
+      <div class="certificate-content">
+        <!-- Foto do pescador -->
+        <div id="foto-container-pescaria" class="photo-container" style="display:none;">
+          <div class="photo-wrapper">
+            <img id="cert-foto-pescaria" src="" alt="Pescador" class="runner-photo"/>
+            <div class="photo-medal">
+              <i class="fas fa-fish"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informações da pescaria -->
+        <div class="race-info">
+          <h2 id="cert-nome-torneio" class="race-title"></h2>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-user info-icon blue"></i>
+                <span class="info-label">Pescador</span>
+              </div>
+              <p id="cert-nome-pescador" class="info-value"></p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-fish info-icon green"></i>
+                <span class="info-label">Espécie</span>
+              </div>
+              <p id="cert-especie" class="info-value"></p>
+            </div>
+
+            <div id="peso-card" class="info-card" style="display:none;">
+              <div class="info-header">
+                <i class="fas fa-weight-hanging info-icon red"></i>
+                <span class="info-label">Peso</span>
+              </div>
+              <p id="cert-peso" class="info-value"></p>
+            </div>
+
+            <div id="comprimento-card" class="info-card" style="display:none;">
+              <div class="info-header">
+                <i class="fas fa-ruler info-icon purple"></i>
+                <span class="info-label">Comprimento</span>
+              </div>
+              <p id="cert-comprimento" class="info-value"></p>
+            </div>
+
+            <div id="tecnica-card" class="info-card" style="display:none;">
+              <div class="info-header">
+                <i class="fas fa-tools info-icon orange"></i>
+                <span class="info-label">Técnica</span>
+              </div>
+              <p id="cert-tecnica" class="info-value"></p>
+            </div>
+
+            <div id="hora-card" class="info-card" style="display:none;">
+              <div class="info-header">
+                <i class="fas fa-clock info-icon blue"></i>
+                <span class="info-label">Hora da Captura</span>
+              </div>
+              <p id="cert-hora" class="info-value"></p>
+            </div>
+          </div>
+
+          <div id="nota-pescaria-container" class="custom-note" style="display:none;">
+            <div class="custom-note-header">
+              <i class="fas fa-fish custom-note-icon"></i>
+              <span class="custom-note-label">Destaque</span>
+            </div>
+            <p id="cert-nota-pescaria" class="custom-note-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensagem motivacional -->
+      <div id="mensagem-container-pescaria" class="motivational-message" style="display:none;">
+        <div class="message-wrapper">
+          <i class="fas fa-quote-left quote-icon"></i>
+          <p id="cert-mensagem-pescaria" class="message-text"></p>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="certificate-footer">
+        <div class="footer-content">
+          <div class="footer-line left"></div>
+          <div class="footer-text">
+            <i class="fas fa-fish footer-icon"></i>
+            <span>CONQUISTA REGISTRADA</span>
+            <i class="fas fa-fish footer-icon"></i>
+          </div>
+          <div class="footer-line right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

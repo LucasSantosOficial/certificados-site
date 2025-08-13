@@ -1,0 +1,900 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Utilitários */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-12 {
+    margin-top: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-t-lg {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Backgrounds gradientes */
+.bg-gradient-blue {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+}
+
+.bg-gradient-amber {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.bg-gradient-header {
+    background: linear-gradient(90deg, #16a34a 0%, #15803d 100%);
+}
+
+/* Layout responsivo */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.max-w-md {
+    max-width: 28rem;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.max-w-6xl {
+    max-width: 72rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.space-y-3 > * + * {
+    margin-top: 0.75rem;
+}
+
+.space-y-4 > * + * {
+    margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+    margin-top: 1.5rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Componentes do formulário */
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    opacity: 0.9;
+}
+
+.card-content {
+    background: white;
+}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.input, .select, .textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botões */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: #16a34a;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #15803d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: #f9fafb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-destructive {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-destructive:hover:not(:disabled) {
+    background: #dc2626;
+}
+
+/* Cards de Atividade */
+.activity-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #16a34a;
+}
+
+.activity-card.coming-soon {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.activity-card.coming-soon:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+.activity-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.activity-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.activity-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.activity-description {
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.activity-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+    background: #f0fdf4;
+    color: #16a34a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #bbf7d0;
+}
+
+/* Destaques de Recursos */
+.feature-highlight {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.feature-text {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Cores de texto */
+.text-gray-600 {
+    color: #4b5563;
+}
+
+.text-gray-700 {
+    color: #374151;
+}
+
+.text-gray-800 {
+    color: #1f2937;
+}
+
+.text-blue-100 {
+    color: #dcfce7;
+}
+
+.text-green-600 {
+    color: #16a34a;
+}
+
+.text-green-800 {
+    color: #166534;
+}
+
+.hover\:text-green-800:hover {
+    color: #166534;
+}
+
+.hover\:text-green-600:hover {
+    color: #16a34a;
+}
+
+.hover\:bg-white:hover {
+    background-color: white;
+}
+
+.bg-green-50 {
+    background-color: #f0fdf4;
+}
+
+.border-green-200 {
+    border-color: #bbf7d0;
+}
+
+.border-white {
+    border-color: white;
+}
+
+/* Ícones */
+.w-4 {
+    width: 1rem;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+/* Certificado com largura fixa e altura automática (NADA de aspect-ratio) */
+.certificate-container {
+  width: 1240px;            /* ~A4 landscape em boa definição na tela */
+  max-width: 100%;          /* responsivo se a tela for menor */
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  /* se tiver sombra grande, mantenha overflow visível pra html2canvas pegar tudo */
+  overflow: visible;
+}
+
+/* Garante que nada seja cortado no preview */
+#preview-container {
+  overflow: visible !important;
+}
+
+/* Decorações de canto */
+.corner-decoration {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border: 4px solid #22c55e;
+}
+
+.top-left {
+    top: 1rem;
+    left: 1rem;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 0.5rem;
+}
+
+.top-right {
+    top: 1rem;
+    right: 1rem;
+    border-left: none;
+    border-bottom: none;
+    border-top-right-radius: 0.5rem;
+}
+
+.bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+    border-right: none;
+    border-top: none;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 0.5rem;
+}
+
+/* Cabeçalho do certificado */
+.certificate-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.certificate-trophy-icon {
+    font-size: 2rem;
+    color: #16a34a;
+}
+
+.certificate-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #16a34a 0%, #15803d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.certificate-divider {
+    width: 8rem;
+    height: 4px;
+    background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+    margin: 1rem auto;
+}
+
+.certificate-location {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+.certificate-date {
+    font-size: 1.125rem;
+    color: #64748b;
+}
+
+/* Conteúdo do certificado */
+.certificate-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .certificate-content {
+        flex-direction: row;
+    }
+}
+
+/* Foto do corredor */
+.photo-container {
+    flex-shrink: 0;
+}
+
+.photo-wrapper {
+    position: relative;
+}
+
+.runner-photo {
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 4px solid white;
+}
+
+.photo-medal {
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    background: #16a34a;
+    border-radius: 50%;
+    padding: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.photo-medal i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Informações da corrida */
+.race-info {
+    flex: 1;
+    width: 100%;
+}
+
+.race-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #15803d;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .race-title {
+        text-align: left;
+    }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-icon {
+    font-size: 1.25rem;
+}
+
+.info-icon.blue {
+    color: #2563eb;
+}
+
+.info-icon.red {
+    color: #dc2626;
+}
+
+.info-icon.green {
+    color: #16a34a;
+}
+
+.info-icon.purple {
+    color: #9333ea;
+}
+
+.info-icon.orange {
+    color: #ea580c;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #475569;
+}
+
+.info-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* Nota personalizada */
+.custom-note {
+    background: linear-gradient(90deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #22c55e;
+    margin-top: 1rem;
+}
+
+.custom-note-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.custom-note-icon {
+    font-size: 1.25rem;
+    color: #16a34a;
+}
+
+.custom-note-label {
+    font-weight: 600;
+    color: #475569;
+}
+
+.custom-note-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #15803d;
+}
+
+/* Mensagem motivacional */
+.motivational-message {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.message-wrapper {
+    background: linear-gradient(90deg, #f1f5f9 0%, #f8fafc 100%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+}
+
+.message-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #475569;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Rodapé do certificado */
+.certificate-footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-line {
+    width: 6rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #cbd5e1 100%);
+}
+
+.footer-line.right {
+    background: linear-gradient(90deg, #cbd5e1 0%, transparent 100%);
+}
+
+.footer-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+}
+
+.footer-icon {
+    font-size: 1.25rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .certificate-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 2rem;
+        min-height: auto;
+    }
+    
+    .certificate-title {
+        font-size: 2rem;
+    }
+    
+    .runner-photo {
+        width: 12rem;
+        height: 12rem;
+    }
+    
+    .race-title {
+        font-size: 1.5rem;
+    }
+    
+    .message-text {
+        font-size: 1.25rem;
+    }
+    
+    .activity-card {
+        padding: 1.5rem;
+    }
+    
+    .activity-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .activity-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animações */
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+    transform: scale(1.02);
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Utilitários de display */
+.hidden {
+    display: none !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
